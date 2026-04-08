@@ -1,0 +1,10 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "birl-local",
+  "main": "src/pipeline/worker/index.server.ts",
+  "compatibility_date": "2025-09-02",
+  "account_id": "b8772d7be936c70234ce641c0ec7728b",
+  "ai": {
+    "binding": "AI"
+  }
+}
