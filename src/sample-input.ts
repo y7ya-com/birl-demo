@@ -123,7 +123,6 @@ export function createSampleSteps() {
       'brand_catalog.csv',
       sampleCatalogCSV,
     ),
-    createGenerateStep(),
     createTransformStep(),
   ]
 
