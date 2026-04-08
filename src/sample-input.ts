@@ -77,10 +77,40 @@ export function createTransformStep() {
   return step
 }
 
+export function createBlankEnrichStep(): InferOutput<typeof enrichStepSchema> {
+  return {
+    id: crypto.randomUUID(),
+    type: 'enrich',
+    name: 'Enrich',
+    prompt: '',
+    referenceFileName: undefined,
+    referenceData: undefined,
+  }
+}
+
+export function createBlankGenerateStep(): InferOutput<typeof generateStepSchema> {
+  return {
+    id: crypto.randomUUID(),
+    type: 'generate',
+    name: 'Generate',
+    prompt: '',
+  }
+}
+
+export function createBlankTransformStep(): InferOutput<typeof transformStepSchema> {
+  return {
+    id: crypto.randomUUID(),
+    type: 'transform',
+    name: 'Transform',
+    instructions: '',
+    fields: [],
+  }
+}
+
 export function createFunctionStep(type: WorkflowStep['type']) {
-  if (type === 'enrich') return createEnrichStep()
-  if (type === 'generate') return createGenerateStep()
-  return createTransformStep()
+  if (type === 'enrich') return createBlankEnrichStep()
+  if (type === 'generate') return createBlankGenerateStep()
+  return createBlankTransformStep()
 }
 
 export function createSampleSteps() {
